@@ -7,7 +7,7 @@ function register(req, res) {
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(password, salt);
     let newUser = new userSchema({
-        username, email, password: hashedPassword, role: 'staff'
+        username, email, password: hashedPassword, role: 'user'
     });
 
     newUser.save(function(err) {
